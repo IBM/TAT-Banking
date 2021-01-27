@@ -1,0 +1,57 @@
+# Copyright 2017 Istio Authors
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+##################################################################################################
+# rabbitmq
+##################################################################################################
+apiVersion: v1
+kind: Service
+metadata:
+  name: rabbit
+  labels:
+    app: rabbit
+    service: rabbit
+spec:
+  ports:
+  - port: 61613
+    name: http
+  selector:
+    app: rabbit
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rabbit-mq
+  labels:
+    app: rabbit
+    version: v1
+spec:
+  selector:
+    matchLabels:
+      app: rabbit
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: rabbit
+        version: v1
+    spec:
+      containers:
+      - name: rabbit
+        image: tonyfieit/rabbit:v0.5
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 61613
+---
