@@ -1,4 +1,4 @@
-## Migrate Linux application containers from x86 to IBM LinuxONE on Red Hat OpenShift 4.4 using Multi-Arch
+## Migrate Linux application containers from x86 to IBM LinuxONE on Red Hat OpenShift 4.4 using Multi-Architecture
 
 ## Summary
 This Code pattern describes a step-by-step and best practice approach for migrating an existing x86 application container to LinuxONE on Red Hat OpenShift 4.4 using Multi-architecture. This Code Pattern focuses on deploying OpenShift Container using multi-architecture and provides a validated process for deploying a production ready OpenShift Container Platform Cluster on LinuxONE.
@@ -37,7 +37,7 @@ RedHat OpenShift provides enterprise scale Kubernetes benefits from leading prac
 
 ### 1. Clone the tat-banking repository locally
 
-Clone down this `tat-banking-demo` repository on your LinuxONE environment.
+Clone down this `TAT-Banking` repository on your LinuxONE environment.
 
  **Note:** Please make sure you login to your LinuxOne environment to complete these steps below. Also if don't want to pull the TAT-Banking Application code from github and build the docker images for LinuxONE then you can skip step1 through step4
  
@@ -54,40 +54,37 @@ Follow the steps outline below to clone the repo, build docker images, tag and p
 
        1. Change to the directory where you clone the repo 
           
-           $ cd tat-banking-demo/
+           $ cd TAT-Banking/
           
-      2. Change to the directory where you clone the repo 
-         
-           $ cd tat-banking-demo/
-          
-      3. Execute this maven command below to build the tat-banking application binaries 
+              
+      2. Execute this maven command below to build the tat-banking application binaries 
           
            $ mvn clean package
                           
-      4. If the build is successful, then copy the binaries as showing below
+      3. If the build is successful, then copy the binaries as showing below
          
-           $ cp customer-service/target/customer-service-1.0-SNAPSHOT.jar tat-banking-demo/docs/build/customer
-           $ cp account-service/target/account-service-1.0-SNAPSHOT.jar tat-banking-demo/docs/build/account
-           $ cp transaction-service/target/transaction-service-1.0-SNAPSHOT.jar tat-banking-demo/docs/build/transaction
-           $ cp portal/target/portal-1.0-SNAPSHOT.war tat-banking-demo/docs/build/portal
+           $ cp customer-service/target/customer-service-1.0-SNAPSHOT.jar TAT-Bankin/docs/build/customer
+           $ cp account-service/target/account-service-1.0-SNAPSHOT.jar TAT-Bankin/docs/build/account
+           $ cp transaction-service/target/transaction-service-1.0-SNAPSHOT.jar TAT-Bankin/docs/build/transaction
+           $ cp portal/target/portal-1.0-SNAPSHOT.war TAT-Bankin/docs/build/portal
          
-      5. Change to the build directory as shown below 
+      4. Change to the build directory as shown below 
          
          $ cd docs/build/customer
          
-      6. Execute docker build command below to build the customer images 
+      5. Execute docker build command below to build the customer images 
          
          $ docker build -t customer-ubi:v0.1 .
          
-      7. Execute docker tag command to tag the images that just created 
+      6. Execute docker tag command to tag the images that just created 
          
          $ docker tag customer-ubi:v0.1 <your-docker-account>/customer-ubi-s390x:v0.1
          
-      8. Execute docker push command to push the image into dockerhub 
+      7. Execute docker push command to push the image into dockerhub 
          
          $ docker push <your-docker-account>/customer-s390x:v0.5  
          
-      9. Repeat step 1-8 above to build the docker images for account-service, transaction-service, and portal. For rabbit service, repeat step 5-8.    
+      8. Repeat step 1-8 above to build the docker images for account-service, transaction-service, and portal. For rabbit service, repeat step 4-7.    
        
 ### 3. Install Manifest tool
 
@@ -102,7 +99,7 @@ When a container is started from a multi-arch image, OpenShift selects and uses 
 host.
 
 We have already created variant image for our TAT Banking application that will serve two different architectures (x86 and s390x). First
-thing we will need to do is to enable Manifest tool and assemble the images into a manifest list. To download the manifest deployment files, click [here](https://github.ibm.com/Antoine-Fievre/tat-banking-demo/tree/master/docs/manifest-list).
+thing we will need to do is to enable Manifest tool and assemble the images into a manifest list. To download the manifest deployment files, click [here](https://github.com/IBM/TAT-Banking/tree/master/docs/manifest-list).
 
 Follow the steps outline below to create Multi-Architecture image lists: 
 
@@ -147,7 +144,7 @@ The TAT Banking application has the following images built and available for bot
 ### 6. Deploy TAT Banking Application Using Multi-Architecture Images
 
 We created the multi-architecute images for TAT Banking, now let us use it to deploy the application into OpenShift.
-The following [artifacts](https://github.ibm.com/Antoine-Fievre/tat-banking-demo/tree/master/docs/deployment) will be needed to complete the deployment of TAT-Banking application On Red Hat OpenShift.
+The following [artifacts](https://github.com/IBM/TAT-Banking/tree/master/docs/deployment) will be needed to complete the deployment of TAT-Banking application On Red Hat OpenShift.
  
  * Customer.yaml
  * Account.yaml
@@ -168,7 +165,7 @@ Follow the steps outline below to deploy the TAT Banking application on Red Hat 
           
        3. Change to the directory where you clone the repo
           
-           $ cd tat-banking-demo/docs/deployment
+           $ cd TAT-Banking/docs/deployment
                           
        4. Run the Deploy.sh script
          
