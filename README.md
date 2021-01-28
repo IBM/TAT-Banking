@@ -42,7 +42,7 @@ Clone down this `TAT-Banking` repository on your LinuxONE environment.
  **Note:** Please make sure you login to your LinuxOne environment to complete these steps below. Also if don't want to pull the TAT-Banking Application code from github and build the docker images for LinuxONE then you can skip step1 through step4
  
 ```
-$ git clone --recurse-submodules git@github.ibm.com:Antoine-Fievre/tat-banking-demo.git
+$ git clone https://github.com/IBM/TAT-Banking.git
 ```
 
 ### 2. Build TAT-Banking custom docker image for LinuxONE
@@ -63,10 +63,10 @@ Follow the steps outline below to clone the repo, build docker images, tag and p
                           
       3. If the build is successful, then copy the binaries as showing below
          
-           $ cp customer-service/target/customer-service-1.0-SNAPSHOT.jar TAT-Bankin/docs/build/customer
-           $ cp account-service/target/account-service-1.0-SNAPSHOT.jar TAT-Bankin/docs/build/account
-           $ cp transaction-service/target/transaction-service-1.0-SNAPSHOT.jar TAT-Bankin/docs/build/transaction
-           $ cp portal/target/portal-1.0-SNAPSHOT.war TAT-Bankin/docs/build/portal
+           $ cp customer-service/target/customer-service-1.0-SNAPSHOT.jar TAT-Banking/docs/build/customer
+           $ cp account-service/target/account-service-1.0-SNAPSHOT.jar TAT-Banking/docs/build/account
+           $ cp transaction-service/target/transaction-service-1.0-SNAPSHOT.jar TAT-Banking/docs/build/transaction
+           $ cp portal/target/portal-1.0-SNAPSHOT.war TAT-Banking/docs/build/portal
          
       4. Change to the build directory as shown below 
          
@@ -161,7 +161,7 @@ Follow the steps outline below to deploy the TAT Banking application on Red Hat 
           
        2. Clone the tat-banking repos(if repo is already cloned then no need to clone it again, proceed to step 3) 
          
-           $ git clone --recurse-submodules git@github.ibm.com:Antoine-Fievre/tat-banking-demo.git
+           $ git clone https://github.com/IBM/TAT-Banking.git
           
        3. Change to the directory where you clone the repo
           
