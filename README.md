@@ -39,7 +39,7 @@ RedHat OpenShift provides enterprise scale Kubernetes benefits from leading prac
 
 Clone down this `TAT-Banking` repository on your LinuxONE environment.
 
- **Note:** Please make sure you login to your LinuxOne environment to complete these steps below. Also if don't want to pull the TAT-Banking Application code from github and build the docker images for LinuxONE then you can skip step1 through step4
+ **Note:** Please make sure you login to your LinuxOne environment to complete these steps below. Also if don't want to pull the TAT-Banking Application code from github and build the docker images for LinuxONE then you can skip 'Step 1' through 'Step 4'
  
 ```
 $ git clone https://github.com/IBM/TAT-Banking.git
@@ -137,7 +137,7 @@ Follow the steps outline below to create Multi-Architecture image lists:
   
   ### 5. Pre-build Container Image for TAT-Banking
 
-The TAT Banking application has the following images built and available for both x86 and s390x on dockerhub. If you don't want to deal with the tat-banking applicationn code and don't want to build container images then you can use the multi-arch images listed from the screen shot below to deploy the application on LinuxONE. To deploy the tat-banking application, please go to `step 6`.
+The TAT Banking application has the following images built and available for both x86 and s390x on dockerhub. If you don't want to deal with the tat-banking applicationn code and don't want to build container images then you can use the multi-arch images listed from the screen shot below to deploy the application on LinuxONE. To deploy the tat-banking application, please go to `Step 6`.
 
 ![alt text](docs/images/multi-arch-images.png "multi-arch")
 
