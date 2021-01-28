@@ -139,6 +139,8 @@ Follow the steps outline below to create Multi-Architecture image lists:
 
 The TAT Banking application has the following images built and available for both x86 and s390x on dockerhub. If you don't want to deal with the tat-banking applicationn code and don't want to build container images then you can use the multi-arch images listed from the screen shot below to deploy the application on LinuxONE. To deploy the tat-banking application, please go to `Step 6`.
 
+If you complete `Step 1` through `Step 4` then go to `Step 6`.
+
 ![alt text](docs/images/multi-arch-images.png "multi-arch")
 
 ### 6. Deploy TAT Banking Application Using Multi-Architecture Images
