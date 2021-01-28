@@ -39,7 +39,7 @@ RedHat OpenShift provides enterprise scale Kubernetes benefits from leading prac
 
 Clone down this `TAT-Banking` repository on your LinuxONE environment.
 
- **Note:** Please make sure you login to your LinuxOne environment to complete these steps below. Also if don't want to pull the TAT-Banking Application code from github and build the docker images for LinuxONE then you can skip 'Step 1' through 'Step 4'
+ **Note:** Please make sure you login to your LinuxOne environment to complete these steps below. Also if don't want to pull the TAT-Banking Application code from github and build the docker images for LinuxONE then you can skip `Step 1` through `Step 4`
  
 ```
 $ git clone https://github.com/IBM/TAT-Banking.git
