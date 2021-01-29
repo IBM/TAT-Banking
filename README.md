@@ -146,7 +146,7 @@ If you complete `Step 1` through `Step 4` then go to `Step 6`.
 ### 6. Deploy TAT Banking Application Using Multi-Architecture Images
 
 We created the multi-architecute images for TAT Banking, now let us use it to deploy the application into OpenShift.
-The following [artifacts](https://github.com/IBM/TAT-Banking/tree/master/docs/deployment) will be needed to complete the deployment of TAT-Banking application On Red Hat OpenShift.
+The following [artifacts](https://github.com/IBM/TAT-Banking/tree/master/docs/deployment) will be needed to complete the deployment of TAT-Banking application On Red Hat OpenShift. If you complete `Step 1` through `Step 4` then you will need to modify the following yaml files below by adding the manifest list image that you created on `step4'.
  
  * Customer.yaml
  * Account.yaml
