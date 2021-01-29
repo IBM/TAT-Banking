@@ -103,7 +103,7 @@ thing we will need to do is to enable Manifest tool and assemble the images into
 
 Follow the steps outline below to create Multi-Architecture image lists: 
 
-    1. Login into the server where you install the manifest-tool and and download the manifest configuration files to a temp directory and  execute the following commands to create Multi-Architecture image for each service.
+    1. Login into the server where you install the manifest-tool and download the manifest configuration files to a temp directory and  execute the following commands to create Multi-Architecture image for each service.
  
        a. Create manifest list for customer-service
           $ manifest push from-spec customer-v0.1.yml
