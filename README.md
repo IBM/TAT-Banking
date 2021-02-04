@@ -38,11 +38,10 @@ If you do not already have an OpenShift cluster, please visit the [IBM LinuxONE 
 
 ### 1. Clone the tat-banking repository locally
 
-Clone down this `TAT-Banking` repository into your LinuxONE environment.
-
 **Note:** Please make sure you login to your LinuxONE environment to complete these steps below. If you don't want to pull the TAT-Banking Application code from Github and build the docker images for LinuxONE then you can skip `Step 1` through `Step 4`.
  
 ```
+ 1. Clone this `TAT-Banking` repository into your local Linux or LinuxONE environment.
 $ git clone https://github.com/IBM/TAT-Banking.git
 ```
 
@@ -53,7 +52,7 @@ The custom Dockerfile for each service uses a Universal Base OS Image which supp
 Follow the steps outlined below to clone the repo, build docker images, and tag and push the images to dockerhub: 
 
 
-       1. Change to the directory where you clone the repo 
+       1. Change to the directory where you clone the `TAT-Banking` repo 
           
            $ cd TAT-Banking/
           
@@ -77,11 +76,11 @@ Follow the steps outlined below to clone the repo, build docker images, and tag 
          
          $ docker build -t customer-ubi:v0.1 .
          
-      6. Execute docker tag command to tag the images that you just created 
+      6. Execute docker tag command to tag the images that you just created( <your-docker-account> = this should be your docker account)
          
          $ docker tag customer-ubi:v0.1 <your-docker-account>/customer-ubi-s390x:v0.1
          
-      7. Execute docker push command to push the image into dockerhub 
+      7. Execute docker push command to push the image into dockerhub account 
          
          $ docker push <your-docker-account>/customer-s390x:v0.5  
          
@@ -89,9 +88,9 @@ Follow the steps outlined below to clone the repo, build docker images, and tag 
        
 ### 3. Install Manifest tool
 
-For TAT Banking we use a manifest tool to create multi-architecture images, the manifest-tool is a command line utility that implements a portion of the client side of the Docker registry v2.2 API for interacting with manifest objects in a registry conforming to that specification. The manifest tool can be installed on Linux on x86, Linux on IBM Z, or on LinuxONE.
+For TAT Banking we use a manifest tool to create multi-architecture images, the manifest-tool is a command line utility that implements a portion of the client side of the Docker registry v2.2 API for interacting with manifest objects in a registry conforming to that specification. The manifest tool can be installed on Linux on x86, Linux on IBM Z, or on LinuxONE. If you are comfortable with buildah or buildx then feel free to use either one of them to create your multi-architecture images.
 
-To install the manifest tool, please follow the installation steps [here](http://containerz.blogspot.com/2016/07/multi-arch-registry.html).
+To install the manifest tool, please follow the installation steps [here](http://containerz.blogspot.com/2016/07/multi-arch-registry.html) before moving to the next step.
 
 ### 4. Create Multi-architecture Images for TAT-Banking
  
@@ -103,33 +102,36 @@ We have already created variant images for our TAT Banking application that will
 
 Follow the steps outline below to create Multi-Architecture image lists: 
 
-    1. Login to the server where you install the manifest-tool and download the manifest configuration files to a temp directory.  Execute the following commands to create a Multi-Architecture image for each service.
+    1. Login to the server where you install the manifest-tool and execute the following commands to create a Multi-Architecture image for each service.
  
-       a. Create manifest list for customer-service
+       a. Change to the directory where you clone the `TAT-Banking` repo 
+          $ cd TAT-Banking/docs/manifest-list
+         
+          Execute this command to create manifest list for customer-service (Note: if you are  complete step 2 then you need to change the yml files to reflect your image)
           $ manifest push from-spec customer-v0.1.yml
-      @@@@@@@@@@@@@@
+    
           Then use this command to inspect the manifest list
           $ manifest inspect tonyfieit/customer:v0.1    
             
-       b. Create manifest list for account-service
+       b. Execute this command to create manifest list for account-service
           $ manifest push from-spec account-v0.1.yml
       
           Then use this command to inspect the manifest list
           $ manifest inspect tonyfieit/account:v0.1    
       
-       c.  Create manifest list for transaction-service
+       c.  Execute this command to create manifest list for transaction-service
            $ manifest push from-spec transaction-v0.1.yml
       
            Then use this command to inspect the manifest list
            $ manifest inspect tonyfieit/transaction:v0.1  
       
-       d.  Create manifest list for portal
+       d.  Execute this command to create manifest list for portal
            $ manifest push from-spec portal-v0.1.yml
       
            Then use this command to inspect the manifest list
            $ manifest inspect tonyfieit/portal:v0.1  
       
-       e.  Create manifest list for rabbit-service
+       e.  Execute this command to create manifest list for rabbit-service
            $ manifest push from-spec rabbit-v0.5.yml
       
            Then use this command to inspect the manifest list
