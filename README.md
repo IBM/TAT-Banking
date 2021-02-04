@@ -23,7 +23,7 @@ RedHat OpenShift is built on Kubernetes with portability in mind. 4.x version su
 
 ## Getting a test OpenShift cluster
 
-If you do not already have an OpenShift cluster, please visit the [IBM LinuxONE Community Cloud](https://developer.ibm.com/components/ibm-linuxone) to register for a free trial.  The following instructions are written for someone with some experience using Red Hat OpenShift.  If you find that you'd like more introductory details, please make use of these [Fast Start Guides](https://www.ibm.com/community/z/linuxone-cc/faststart/).
+If you do not already have an OpenShift cluster, please visit the [IBM LinuxONE Community Cloud](https://linuxone.cloud.marist.edu/#/register?flag=OCP) to register for a free trial.  The following instructions are written for someone with some experience using Red Hat OpenShift.  If you find that you'd like more introductory details, please make use of these [Fast Start Guides](https://www.ibm.com/community/z/linuxone-cc/faststart/).
 
 ## Steps
 
