@@ -1,3 +1,4 @@
+<!--
 /*##############################################################################
 # Copyright 2021 IBM Corp. All Rights Reserved.
 #
@@ -13,6 +14,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 ##############################################################################*/
+-->
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
