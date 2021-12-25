@@ -1,3 +1,4 @@
+<!--
 /*##############################################################################
 # Copyright 2021 IBM Corp. All Rights Reserved.
 #
@@ -12,7 +13,8 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-##############################################################################*/
+##############################################################################*/ 
+-->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
