@@ -1,3 +1,4 @@
+<!--
 /*##############################################################################
 # Copyright 2021 IBM Corp. All Rights Reserved.
 #
@@ -13,6 +14,7 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 ##############################################################################*/
+-->
 <%-- tpl:insert page="/theme/itso_jsp_template.jtpl" --%><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
 <html>
