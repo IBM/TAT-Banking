@@ -143,7 +143,7 @@ The TAT Banking application has the following images built and available for bot
 
 If you completed `Step 1` through `Step 4` then continue to `Step 6`.
 
-![alt text](docs/images/multi-arch-images.png "multi-arch")
+![alt text](docs/images/multi-arch-images-v01.1.png "multi-arch")
 
 ### 6. Deploy TAT Banking Application Using Multi-Architecture Images
 
